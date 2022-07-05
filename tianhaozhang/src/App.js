@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import ReactHowler from 'react-howler'
+import { Button } from "@mui/material";
 
 function App() {
+  const [mode, setMode] = useState("dark");
+  const [audio, setAudio] = useState(true);
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
+  const handleClick = () => {
+    (audio) ? setAudio(false) : setAudio(true)
+  }
+  // useEffect(() => {
+  //   (audio) ? setAudio(false) : setAudio(true)
+  // }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Navbar />
+      <Button onClick={handleClick}>{audio ? "pause ||" : "play >"}</Button>
+      
+      <ReactHowler
+        src='wooden.mp3'
+        playing={audio}
+      />
+    </ThemeProvider>
   );
 }
 
