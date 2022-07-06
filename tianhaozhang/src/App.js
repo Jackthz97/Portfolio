@@ -1,36 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import ReactHowler from 'react-howler'
-import { Button } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import TechStack from "./components/TechStack";
 
 function App() {
   const [mode, setMode] = useState("dark");
-  const [audio, setAudio] = useState(true);
 
   const darkTheme = createTheme({
     palette: {
       mode: mode,
     },
   });
-  const handleClick = () => {
-    (audio) ? setAudio(false) : setAudio(true)
-  }
-  // useEffect(() => {
-  //   (audio) ? setAudio(false) : setAudio(true)
-  // }, [])
+
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Navbar />
-      <Button onClick={handleClick}>{audio ? "pause ||" : "play >"}</Button>
-      
-      <ReactHowler
-        src='wooden.mp3'
-        playing={audio}
-      />
+      <Routes>
+        <Route path="/" element={<Home mode={mode} setMode={setMode} />} />
+        <Route path="/tech-stack" element={<TechStack mode={mode} setMode={setMode} />} />
+      </Routes>
     </ThemeProvider>
   );
 }
