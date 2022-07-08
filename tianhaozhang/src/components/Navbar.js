@@ -20,19 +20,52 @@ export default function Navbar({ mode, setMode }) {
     <Box className="navbar" sx={{ flexGrow: 1 }}>
       <Grid container direction={"row"} justifyContent="center" mt={4}>
         <Link to="/" style={{ textDecoration: "none", color: textColor }}>
-          <Typography mr={30} className='navbar-tab' style={{ fontWeight: 600 }}>Logo</Typography>
+          <Typography
+            mr={30}
+            className="navbar-tab"
+            style={{ fontWeight: 600 }}
+          >
+            Logo
+          </Typography>
         </Link>
 
         <Link
           to="/tech-stack"
           style={{ textDecoration: "none", color: textColor }}
         >
-          <Typography mr={5} className='navbar-tab'style={{ fontWeight: 600 }} >Tech-stack</Typography>
+          <Typography mr={5} className="navbar-tab" style={{ fontWeight: 600 }}>
+            Tech-stack
+          </Typography>
         </Link>
 
-        <Typography mr={5} className='navbar-tab' style={{ fontWeight: 600 }}>Projects</Typography>
-        <Typography mr={5} className='navbar-tab' style={{ fontWeight: 600 }}>Contact</Typography>
-        <Typography mr={30} className='navbar-tab' style={{ fontWeight: 600 }}>Resume / CV</Typography>
+        <Link
+          to="/projects"
+          style={{ textDecoration: "none", color: textColor }}
+        >
+          <Typography mr={5} className="navbar-tab" style={{ fontWeight: 600 }}>
+            Projects
+          </Typography>
+        </Link>
+
+        <Link
+          to="/contacts"
+          style={{ textDecoration: "none", color: textColor }}
+        >
+          <Typography mr={5} className="navbar-tab" style={{ fontWeight: 600 }}>
+            Contact
+          </Typography>
+        </Link>
+
+        <Link to="/resume" style={{ textDecoration: "none", color: textColor }}>
+          <Typography
+            mr={30}
+            className="navbar-tab"
+            style={{ fontWeight: 600 }}
+          >
+            Resume / CV
+          </Typography>
+        </Link>
+
         <button onClick={handleMode}>{mode}</button>
       </Grid>
     </Box>
