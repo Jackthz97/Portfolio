@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/HomePage/Home";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";

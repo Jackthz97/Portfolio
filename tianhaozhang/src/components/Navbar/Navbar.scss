@@ -1,0 +1,16 @@
+.navbar-container {
+  background-color: grey;
+  .navbar {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    .navbar-tab {
+      font-weight: 200px;
+      margin-right: 20px;
+      margin-left: 25px;
+    }
+  } 
+}
+
+.navbar-tab:hover {
+  color: grey;
+}

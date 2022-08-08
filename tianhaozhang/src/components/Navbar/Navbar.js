@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@mui/system";
-import { Button, Grid } from "@mui/material";
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import "./Components.scss";
+import "./Navbar.scss";
+import { Nav } from "react-bootstrap";
 
 export default function Navbar({ mode, setMode }) {
   const [textColor, setTextColor] = useState("black");
@@ -17,11 +17,30 @@ export default function Navbar({ mode, setMode }) {
   }, [mode]);
 
   return (
-    <Box className="navbar" sx={{ flexGrow: 1 }}>
-      <Grid container direction={"row"} justifyContent="center" mt={4}>
+    // <Nav>
+    //   <Grid container direction={"row"} justifyContent={"space-evenly"}>
+    //     <Nav.Item >
+    //       <Nav.Link href="/">home</Nav.Link>
+    //     </Nav.Item>
+    //     <Nav.Item>
+    //       <Nav.Link href="/tech-stack">Tech-stack</Nav.Link>
+    //     </Nav.Item>
+    //     <Nav.Item>
+    //       <Nav.Link href="/projects">Projects</Nav.Link>
+    //     </Nav.Item>
+    //     <Nav.Item>
+    //       <Nav.Link href="/contacts">Contacts</Nav.Link>
+    //     </Nav.Item>
+    //     <Nav.Item>
+    //       <Nav.Link href="/resume">Resume</Nav.Link>
+    //     </Nav.Item>
+    //   </Grid>
+    // </Nav>
+    <Box className="navbar-container" sx={{ flexGrow: 1 }}>
+      <Grid className="navbar" container direction={"row"} justifyContent="start">
         <Link to="/" style={{ textDecoration: "none", color: textColor }}>
           <Typography
-            mr={30}
+            // mr={30}
             className="navbar-tab"
             style={{ fontWeight: 600 }}
           >

@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
 import { Grid } from "@mui/material";
+import Navbar from "./Navbar/Navbar";
 
 export default function Resume({ mode, setMode }) {
   return (

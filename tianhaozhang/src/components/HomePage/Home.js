@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import Audio from "./Audio";
+import Navbar from "../Navbar/Navbar";
+import Audio from "../Audio";
 import { Grid } from "@mui/material";
 import CircularProgress from "@mui/material/CircularProgress";
+import Loading from "./Loading";
+import ImageSlider from "./ImageSlider";
 
 export default function Home({ mode, setMode }) {
   const [loading, setLoading] = useState(false);
@@ -16,18 +18,14 @@ export default function Home({ mode, setMode }) {
   return (
     <>
       {!loading ? (
-        <Grid
-          className="centered"
-          container
-          direction={"row"}
-          justifyContent={"center"}
-        >
-          <CircularProgress disableShrink />
-        </Grid>
+        <Loading />
       ) : (
-        <Grid container display={"flex"} justifyContent={"center"}>
+        <Grid container direction={"column"}>
           <Navbar mode={mode} setMode={setMode} />
-          <Audio />
+          {/* <Audio /> */}
+          <Grid className="image-slider-container" container>
+            <ImageSlider />
+          </Grid>
         </Grid>
       )}
     </>

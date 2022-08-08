@@ -13,11 +13,15 @@ export default function Audio() {
   };
   return (
     <Grid container direction={"column"} alignContent={"center"} mt={20}>
-      <Typography align="center" mb={2}>Wooden Bear</Typography>
+      <Typography align="center" mb={2}>
+        Wooden Bear
+      </Typography>
       <Button onClick={handleClickWooden}>
         {wooden ? "pause ||" : "play >"}
       </Button>
-      <Typography align="center" mb={2} mt={2}>Bosun Bill</Typography>
+      <Typography align="center" mb={2} mt={2}>
+        Bosun Bill
+      </Typography>
       <Button onClick={handleClickBosun}>
         {bosun ? "pause ||" : "play >"}
       </Button>
