@@ -14,8 +14,7 @@
   position: relative;
   top: 50px;
   left: 50px;
-  animation: fadeInAvatar 1s, fadeInAvatarOpacity 10s,
-    spinHorizontal 0.5s;
+  animation: AvatarMove 1s, spinHorizontal 1s;
 }
 
 @keyframes spinHorizontal {
@@ -38,15 +37,14 @@
   85% {
     opacity: 1;
   }
-
 }
-@keyframes fadeInAvatar {
+@keyframes AvatarMove {
   0% {
-    top: 150px;
+    top: 200px;
   }
-  50% {
-    top: 50px;
-  }
+  // 50% {
+  //   top: 50px;
+  // }
   100% {
     top: 50px;
   }
@@ -102,4 +100,12 @@
   50% {
     opacity: 1;
   }
+}
+
+.home-info-container {
+  background-color: rgb(226, 205, 166);
+  width: 100%;
+  height: 500px;
+  color: black;
+  font-size: large;
 }
